@@ -1,5 +1,3 @@
-#조인 실습 - 1
-
 -- 직원 정보와 직원이 속한 부서명을 가져오기
 select a.*, b.dname 
 from hr.emp a
