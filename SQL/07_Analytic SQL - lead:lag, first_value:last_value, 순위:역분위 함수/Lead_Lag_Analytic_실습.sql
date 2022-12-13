@@ -28,7 +28,7 @@ select empno, deptno, hiredate, ename
 	, coalesce(lag(ename) over (partition by deptno order by hiredate), 'No Previous') as prev_ename 
 from hr.emp;
 
--- 현재일과 이전 매출데이터와 그 차이를 출력. 이전일 매출 데이터가 없을 경우 현재일 매출 데이터를 출력하고, 차이는 0
+-- 현재일과 이전 매출데이터와 그 차이를 출력. 이전 매출 데이터가 없을 경우 현재일 매출 데이터를 출력하고, 차이는 0
 with
 temp_01 as (
 select date_trunc('day', b.order_date)::date as ord_date, sum(amount) as daily_sum
